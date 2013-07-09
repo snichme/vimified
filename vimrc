@@ -158,6 +158,10 @@ if count(g:vimified_packages, 'coding')
 
     autocmd FileType gitcommit set tw=68 spell
     autocmd FileType gitcommit setlocal foldmethod=manual
+
+    Bundle 'mattn/webapi-vim'
+    Bundle 'mattn/gist-vim'
+
 endif
 " }}}
 
