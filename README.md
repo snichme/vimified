@@ -14,14 +14,14 @@ How to install
 
 Copy/Paste this line in your CLI:
 
-    curl -L https://raw.github.com/zaiste/vimified/master/install.sh | sh
+    curl -L https://raw.github.com/snichme/vimified/master/install.sh | sh
 
 ### For those who actually care about what is done
 
 Grab the project:
 
     cd
-    git clone git://github.com/zaiste/vimified.git
+    git clone git://github.com/snichme/vimified.git
     ln -sfn vimified ~/.vim
     ln -sfn vimified/vimrc ~/.vimrc
     cd vimified
