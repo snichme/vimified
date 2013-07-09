@@ -96,7 +96,7 @@ endif
 " _. Fancy {{{
 if count(g:vimified_packages, 'fancy')
     if has('python') || has('python3')
-        Bundle 'Lokaltog/vim-powerline'
+        Bundle 'Lokaltog/powerline'
         let g:Powerline_cache_enabled = 1
     endif
 endif
@@ -255,6 +255,21 @@ if count(g:vimified_packages, 'color')
     colorscheme molokai
 else
     colorscheme default
+endif
+" }}}
+
+" _. PHP {{{
+if count(g:vimified_packages, 'php')
+    Bundle 'StanAngeloff/php.vim'
+    Bundle 'joonty/vim-phpqa.git'
+    let g:phpqa_codesniffer_args = "--standard=Zend"
+
+endif
+" }}}
+
+" _. Scala {{{
+if count(g:vimified_packages, 'scala')
+    Bundle 'derekwyatt/vim-scala'
 endif
 " }}}
 

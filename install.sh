@@ -18,7 +18,7 @@ echo "You are about to be vimified. Ready? Let us do the stuff for you."
 
 if [ ! -d "$INSTALLDIR/vimified" ]; then
     echo "As we can't find Vimified in the current directory, we will create it."
-    git clone git://github.com/zaiste/vimified.git
+    git clone https://github.com/snichme/vimified.git
     create_symlinks
     cd $INSTALLDIR/vimified
 
