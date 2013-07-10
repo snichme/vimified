@@ -256,6 +256,7 @@ if count(g:vimified_packages, 'color')
     Bundle 'w0ng/vim-hybrid'
     Bundle 'chriskempson/base16-vim'
 
+    set background=dark
     colorscheme molokai
 else
     colorscheme default
@@ -266,7 +267,11 @@ endif
 if count(g:vimified_packages, 'php')
     Bundle 'StanAngeloff/php.vim'
     Bundle 'joonty/vim-phpqa.git'
-    let g:phpqa_codesniffer_args = "--standard=Zend"
+    let g:phpqa_codesniffer_args = "--standard=Generic"
+    let g:phpqa_run_on_write = 0
+    let g:phpqa_messdetector_autorun = 0
+    let g:phpqa_codesniffer_autorun = 0
+    let g:phpqa_codecoverage_autorun = 0
 
 endif
 " }}}
