@@ -255,9 +255,10 @@ if count(g:vimified_packages, 'color')
     Bundle 'zaiste/Atom'
     Bundle 'w0ng/vim-hybrid'
     Bundle 'chriskempson/base16-vim'
+    Bundle 'jpo/vim-railscasts-theme'
 
     set background=dark
-    colorscheme molokai
+    colorscheme railscasts
 else
     colorscheme default
 endif
