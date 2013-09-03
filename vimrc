@@ -54,15 +54,12 @@ if count(g:vimified_packages, 'general')
     Bundle "mileszs/ack.vim"
     nnoremap <leader>a :Ack!<space>
 
-    Bundle 'matthias-guenther/hammer.vim'
-    nmap <leader>p :Hammer<cr>
+    Bundle 'godlygeek/tabular'
 
-    Bundle 'tsaleh/vim-align'
-    Bundle 'tpope/vim-endwise'
     Bundle 'tpope/vim-repeat'
-    Bundle 'tpope/vim-speeddating'
+    " Bundle 'tpope/vim-speeddating'
     Bundle 'tpope/vim-surround'
-    Bundle 'tpope/vim-unimpaired'
+    " Bundle 'tpope/vim-unimpaired'
     Bundle 'maxbrunsfeld/vim-yankstack'
     Bundle 'tpope/vim-eunuch'
 
@@ -131,14 +128,12 @@ if count(g:vimified_packages, 'coding')
     Bundle 'majutsushi/tagbar'
     nmap <leader>t :TagbarToggle<CR>
 
-    Bundle 'gregsexton/gitv'
-
     Bundle 'scrooloose/nerdcommenter'
     nmap <leader># :call NERDComment(0, "invert")<cr>
     vmap <leader># :call NERDComment(0, "invert")<cr>
 
     " - Bundle 'msanders/snipmate.vim'
-    Bundle 'sjl/splice.vim'
+    " Bundle 'sjl/splice.vim'
 
     Bundle 'tpope/vim-fugitive'
     nmap <leader>g :Ggrep
@@ -147,20 +142,20 @@ if count(g:vimified_packages, 'coding')
     " same in visual mode
     :vmap <leader>f y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR>
 
-    Bundle 'scrooloose/syntastic'
-    let g:syntastic_enable_signs=1
-    let g:syntastic_auto_loc_list=1
-    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'], 'passive_filetypes': ['html', 'css', 'slim'] }
-
-    " --
-
-    Bundle 'vim-scripts/Reindent'
-
     autocmd FileType gitcommit set tw=68 spell
     autocmd FileType gitcommit setlocal foldmethod=manual
 
-    Bundle 'mattn/webapi-vim'
-    Bundle 'mattn/gist-vim'
+    " Syntax check
+    Bundle 'scrooloose/syntastic'
+    let g:syntastic_enable_signs=1
+    let g:syntastic_auto_loc_list=1
+    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['html', 'slim'] }
+
+    " --
+    Bundle 'vim-scripts/Reindent'
+
+    " Support for .editorconfig
+    Bundle 'editorconfig/editorconfig-vim'
 
 endif
 " }}}
@@ -218,12 +213,18 @@ endif
 
 " _. JS {{{
 if count(g:vimified_packages, 'js')
-    Bundle 'kchmck/vim-coffee-script'
-    au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
+    Bundle 'pangloss/vim-javascript'
+    "  Bundle 'jelera/vim-javascript-syntax'
+    Bundle 'jiangmiao/simple-javascript-indenter'
+    " JSON formatting
     Bundle 'alfredodeza/jacinto.vim'
-    au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
-    au BufNewFile,BufReadPost *.coffee setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
+    let g:syntastic_javascript_checkers = ['jshint']
+
+    au BufNewFile,BufReadPost *.js setl foldmethod=indent nofoldenable
+    au BufNewFile,BufReadPost *.js setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    au BufNewFile,BufReadPost *.json setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 endif
 " }}}
 
@@ -249,12 +250,12 @@ endif
 
 " _. Color {{{
 if count(g:vimified_packages, 'color')
-    Bundle 'sjl/badwolf'
-    Bundle 'altercation/vim-colors-solarized'
-    Bundle 'tomasr/molokai'
-    Bundle 'zaiste/Atom'
-    Bundle 'w0ng/vim-hybrid'
-    Bundle 'chriskempson/base16-vim'
+    " Bundle 'sjl/badwolf'
+    " Bundle 'altercation/vim-colors-solarized'
+    " Bundle 'tomasr/molokai'
+    " Bundle 'zaiste/Atom'
+    " Bundle 'w0ng/vim-hybrid'
+    " Bundle 'chriskempson/base16-vim'
     Bundle 'jpo/vim-railscasts-theme'
 
     set background=dark
@@ -267,12 +268,9 @@ endif
 " _. PHP {{{
 if count(g:vimified_packages, 'php')
     Bundle 'StanAngeloff/php.vim'
-    Bundle 'joonty/vim-phpqa.git'
-    let g:phpqa_codesniffer_args = "--standard=Generic"
-    let g:phpqa_run_on_write = 0
-    let g:phpqa_messdetector_autorun = 0
-    let g:phpqa_codesniffer_autorun = 0
-    let g:phpqa_codecoverage_autorun = 0
+
+    au BufNewFile,BufReadPost *.php setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+    au BufNewFile,BufReadPost *.ctp setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 endif
 " }}}
@@ -350,12 +348,6 @@ nnoremap <leader>L ^vg_y:execute @@<cr>
 nmap <leader>wq :w!<cr>:Bclose<cr>
 
 " }}}
-
-" . abbrevs {{{
-"
-iabbrev z@ oh@zaiste.net
-
-" . }}}
 
 " Settings {{{
 set autoread
