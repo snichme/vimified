@@ -197,7 +197,6 @@ if count(g:vimified_packages, 'html')
     Bundle 'digitaltoad/vim-jade'
     Bundle 'slim-template/vim-slim'
 
-    au BufNewFile,BufReadPost *.ctp set filetype=html
     au FileType html setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
     au BufNewFile,BufReadPost *.jade setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
     au BufNewFile,BufReadPost *.slim setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
