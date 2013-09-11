@@ -92,10 +92,20 @@ endif
 
 " _. Fancy {{{
 if count(g:vimified_packages, 'fancy')
-    if has('python') || has('python3')
-        Bundle 'Lokaltog/powerline'
-        let g:Powerline_cache_enabled = 1
-    endif
+    Bundle 'bling/vim-airline'
+    let g:airline_enable_branch     = 1
+    let g:airline_enable_syntastic  = 1
+    let g:airline_powerline_fonts = 1
+    let g:airline_theme = 'wombat'
+    let g:airline_symbols = {}
+    " unicode symbols
+    let g:airline_left_sep = '▙'
+    let g:airline_right_sep = '▟'
+    let g:airline_symbols.linenr = '␤'
+    let g:airline_symbols.branch = '⎇'
+    let g:airline_symbols.paste = 'ρ'
+    let g:airline_symbols.whitespace = 'Ξ'
+    let g:airline_symbols.readonly = 'RO'
 endif
 " }}}
 
