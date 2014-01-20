@@ -225,15 +225,15 @@ endif
 if count(g:vimified_packages, 'js')
 
     Bundle 'pangloss/vim-javascript'
-    "  Bundle 'jelera/vim-javascript-syntax'
-    Bundle 'jiangmiao/simple-javascript-indenter'
+    Bundle 'jelera/vim-javascript-syntax'
+    Bundle 'othree/javascript-libraries-syntax.vim'
+    " Bundle 'jiangmiao/simple-javascript-indenter'
     " JSON formatting
     Bundle 'alfredodeza/jacinto.vim'
 
     let g:syntastic_javascript_checkers = ['jshint']
 
-    " au BufNewFile,BufReadPost *.js setl foldmethod=indent nofoldenable
-    au BufNewFile,BufReadPost *.js setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab foldmethod=indent nofoldenable
+    au FileType javascript setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab foldmethod=indent
     au BufNewFile,BufReadPost *.json setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 endif
 " }}}
@@ -361,7 +361,8 @@ nnoremap <leader>L ^vg_y:execute @@<cr>
 nmap <leader>wq :w!<cr>:Bclose<cr>
 
 " Map F2 to change tab to spaces
-map <F2> :retab <CR>
+map <F2> :set expandtab<CR>:retab<CR>
+map <Leader>s :%!git stripspace<CR>
 " }}}
 
 " Settings {{{
@@ -474,7 +475,6 @@ augroup END
 " see
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces#Display_or_remove_unwanted_whitespace_with_a_script.
 autocmd BufWritePre * :%s/\s\+$//e
-
 " }}}
 
 " . searching {{{
