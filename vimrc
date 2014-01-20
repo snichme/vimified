@@ -232,8 +232,8 @@ if count(g:vimified_packages, 'js')
 
     let g:syntastic_javascript_checkers = ['jshint']
 
-    au BufNewFile,BufReadPost *.js setl foldmethod=indent nofoldenable
-    au BufNewFile,BufReadPost *.js setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    " au BufNewFile,BufReadPost *.js setl foldmethod=indent nofoldenable
+    au BufNewFile,BufReadPost *.js setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab foldmethod=indent nofoldenable
     au BufNewFile,BufReadPost *.json setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 endif
 " }}}
@@ -287,6 +287,7 @@ endif
 " _. Scala {{{
 if count(g:vimified_packages, 'scala')
     Bundle 'derekwyatt/vim-scala'
+    Bundle 'gre/play2vim'
 endif
 " }}}
 
