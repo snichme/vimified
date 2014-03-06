@@ -215,9 +215,7 @@ endif
 
 " _. CSS {{{
 if count(g:vimified_packages, 'css')
-    Bundle 'wavded/vim-stylus'
-    Bundle 'lunaru/vim-less'
-    nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
+
 endif
 " }}}
 
@@ -235,6 +233,16 @@ if count(g:vimified_packages, 'js')
 
     au FileType javascript setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab foldmethod=indent
     au BufNewFile,BufReadPost *.json setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+endif
+" }}}
+"
+" _. Typescript {{{
+if count(g:vimified_packages, 'ts')
+
+    Bundle 'leafgarland/typescript-vim'
+
+    autocmd BufNewFile,BufRead *.ts setfiletype typescript
+    au FileType typescript setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab foldmethod=indent
 endif
 " }}}
 
@@ -288,6 +296,12 @@ endif
 if count(g:vimified_packages, 'scala')
     Bundle 'derekwyatt/vim-scala'
     Bundle 'gre/play2vim'
+endif
+" }}}
+"
+" _. Go {{{
+if count(g:vimified_packages, 'go')
+    Bundle 'jnwhiteh/vim-golang'
 endif
 " }}}
 
