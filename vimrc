@@ -301,7 +301,8 @@ endif
 "
 " _. Go {{{
 if count(g:vimified_packages, 'go')
-    Bundle 'jnwhiteh/vim-golang'
+    Plugin 'fatih/vim-go'
+    au FileType go setl shiftwidth=2 tabstop=2 softtabstop=2
 endif
 " }}}
 
@@ -567,6 +568,7 @@ vmap <C-Down> ]egv
 
 " . folding {{{
 
+set nofoldenable    " disable folding
 set foldlevelstart=0
 set foldmethod=syntax
 
