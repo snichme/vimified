@@ -33,20 +33,21 @@ Bundle 'gmarik/vundle'
 " }}}
 
 " _. Fancy {{{
-    Bundle 'bling/vim-airline'
+    Plugin 'vim-airline/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
     let g:airline_enable_branch     = 1
     let g:airline_enable_syntastic  = 1
     let g:airline_powerline_fonts = 1
-    let g:airline_theme = 'wombat'
+    let g:airline_theme = 'bubblegum'
     let g:airline_symbols = {}
     " unicode symbols
-    let g:airline_left_sep = '▙'
-    let g:airline_right_sep = '▟'
-    let g:airline_symbols.linenr = '␤'
-    let g:airline_symbols.branch = '⎇'
-    let g:airline_symbols.paste = 'ρ'
-    let g:airline_symbols.whitespace = 'Ξ'
-    let g:airline_symbols.readonly = 'RO'
+"     let g:airline_left_sep = '▙'bubblegum
+"     let g:airline_right_sep = '▟'
+"     let g:airline_symbols.linenr = '␤'
+"     let g:airline_symbols.branch = '⎇'
+"     let g:airline_symbols.paste = 'ρ'
+"     let g:airline_symbols.whitespace = 'Ξ'
+"     let g:airline_symbols.readonly = 'RO'
 " }}}
 
 " _. Coding {{{
